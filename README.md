@@ -24,7 +24,7 @@
 默认引入了全部组件，可删除不使用的组件，可减少打包体积
 
 ## CSS
-和elemen一致，使用[scss](https://sass-lang.com/)
+和element一致，使用[scss](https://sass-lang.com/)
 
 
 
