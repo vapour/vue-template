@@ -15,6 +15,7 @@ export default {
     this.$axios.get('/erp/common/shop', {
       globalLoading: false
     }).then(({ data: res }) => {
+      console.log(res)
     })
 
     const fd = new FormData()

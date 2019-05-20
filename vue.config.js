@@ -48,6 +48,7 @@ module.exports = {
     // 添加别名
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('api', resolve('src/api'))
       .set('components', resolve('src/components'))
   },
   // 打包时不生成.map文件

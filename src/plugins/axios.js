@@ -77,3 +77,5 @@ http.interceptors.response.use((response) => {
 Vue.axios = http
 Vue.prototype.axios = http
 Vue.prototype.$axios = http
+
+export default http

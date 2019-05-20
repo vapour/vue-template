@@ -24,40 +24,11 @@
 默认引入了全部组件，可删除不使用的组件，可减少打包体积
 
 ## CSS
-为兼容element，统一使用[scss](https://sass-lang.com/)
-
-## 模拟请求
-**apis.js**文件中支持使用[expressjs](http://expressjs.com/)和[mockjs](http://mockjs.com/)注册模拟接口
-
-```
-const Mock = require('mockjs')
-
-module.exports = [{
-  // 获取验证码
-  url: '/code/fresh',
-  method: 'get',
-  callback (req, res) {
-    res.json(success(Mock.mock({code:/\d{4}/})))
-  }
-}]
+和elemen一致，使用[scss](https://sass-lang.com/)
 
 
-function success (data) {
-  return {
-    success: true,
-    data
-  }
-}
-function error (msg = '未知错误', code) {
-  return {
-    success: false,
-    msg,
-    code
-  }
-}
-```
 
-## axios
+## axios封装
 **plugins/axios.js**对axios进行了简单封装，可根据需要进行修改
 ### autoHandleError
 默认进行了全局错误处理。请求时可设置```autoHandleError = false```取消默认错误处理
@@ -103,6 +74,72 @@ this.$axios.get('/erp/common/shop', {
   globalLoading: false
 }).then(({ data: res }) => {
 })
+```
+
+## 接口管理
+可将ajax服务在**api**目录以业务为分类统一管理
+
+以下是**api/todo.js**内容
+
+```
+import axios from '@/plugins/axios'
+
+const url = '/todo'
+
+// 待办事项服务接口
+export default {
+  // 分页获取
+  list(params) {
+    return axios.get(url, { params })
+  },
+  // 新建
+  create(params) {
+    return axios.post(url, params)
+  },
+  // 获取详情
+  show(id) {
+    return axios.get(url + '/' + id)
+  },
+  // 更新
+  update(id, params) {
+    return axios.put(url + '/' + id, params)
+  },
+  // 删除
+  delete(id) {
+    return axios.delete(url + '/' + id)
+  }
+}
+```
+
+## 模拟请求
+**apis.js**文件中支持使用[expressjs](http://expressjs.com/)和[mockjs](http://mockjs.com/)注册模拟接口
+
+```
+const Mock = require('mockjs')
+
+module.exports = [{
+  // 获取验证码
+  url: '/code/fresh',
+  method: 'get',
+  callback (req, res) {
+    res.json(success(Mock.mock({code:/\d{4}/})))
+  }
+}]
+
+
+function success (data) {
+  return {
+    success: true,
+    data
+  }
+}
+function error (msg = '未知错误', code) {
+  return {
+    success: false,
+    msg,
+    code
+  }
+}
 ```
 
 ## 代理

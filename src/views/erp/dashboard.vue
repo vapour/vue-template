@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import apiTodo from 'api/todo'
+
 export default {
   data() {
     return {
@@ -13,6 +15,15 @@ export default {
     }
   },
   mounted() {
+    // 分页获取
+    apiTodo.list().then(({ data: res }) => {
+      console.log(res.data.list)
+    })
+
+    // 获取单个
+    apiTodo.show('444444').then(({ data: res }) => {
+      console.log(res.data)
+    })
   }
 }
 </script>
