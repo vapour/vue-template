@@ -19,6 +19,13 @@
 <Icon type="iconName" color="red" :size="14" :class-name="my-icon"></Icon>
 ```
 
+## Element
+统一使用[element](https://element.eleme.cn/#/zh-CN/component/installation)框架，可在**plugins/element.js**中配置用到的组件
+默认引入了全部组件，可删除不使用的组件，可减少打包体积
+
+## CSS
+为兼容element，统一使用[scss](https://sass-lang.com/)
+
 ## 模拟请求
 **apis.js**文件中支持使用[expressjs](http://expressjs.com/)和[mockjs](http://mockjs.com/)注册模拟接口
 
