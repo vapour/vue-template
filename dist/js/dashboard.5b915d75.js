@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["dashboard"],{"325f":function(t,n,e){"use strict";e.r(n);var a=function(){var t=this,n=t.$createElement;t._self._c;return t._m(0)},r=[function(){var t=this,n=t.$createElement,e=t._self._c||n;return e("div",{staticClass:"about"},[e("h1",[t._v("erp控制台页面")])])}],u={data:function(){return{name:"vapour",tableData:[]}},mounted:function(){}},c=u,o=e("2877"),s=Object(o["a"])(c,a,r,!1,null,null,null);n["default"]=s.exports}}]);
+//# sourceMappingURL=dashboard.5b915d75.js.map
