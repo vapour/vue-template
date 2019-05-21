@@ -6,7 +6,7 @@
 * [Vue风格](https://cn.vuejs.org/v2/style-guide/)
 
 ## 目录
-![Vue目录规范](https://ws2.sinaimg.cn/large/006tNc79gy1g37lr9nxi9j30gl0momyd.jpg)
+![Vue目录规范](https://ws3.sinaimg.cn/large/006tNc79gy1g38ru1imgkj30hb0nrq4a.jpg)
 
 ## 图标
 

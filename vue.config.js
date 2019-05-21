@@ -1,5 +1,5 @@
 const path = require('path')
-const apis = require('./apis.js')
+const apis = require('./config/apis.js')
 
 const ENV = process.env
 let NODE_ENV = ENV.NODE_ENV
