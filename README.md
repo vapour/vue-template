@@ -220,11 +220,11 @@ Vue.config.errorHandler = function errorHandler(err, vm, cause) {
 ## 说明文档
 代码注释规范使用[jsdoc](https://jsdoc.app/)
 
-运行
+运行以下命令，根据注释生成说明文档
+
 ```
 npm run doc
 ```
-命令，根据代码注释生成说明文档
 
 ### vue组件注释
 ```

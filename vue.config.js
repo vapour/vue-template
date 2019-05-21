@@ -12,13 +12,19 @@ const resolve = dir => {
 module.exports = {
   configureWebpack: config => {
     let ret = {
+      performance: {
+        // 1m
+        maxEntrypointSize: 1024000,
+        // 1M
+        maxAssetSize: 1024000
+      },
       // 外部已经加载的全局变量
       externals: [
         function (context, request, callback) {
           if (['jQuery'].includes(request)) {
             return callback(null, 'window ' + request)
           }
-          callback();
+          callback()
         }
       ]
     }
@@ -80,7 +86,24 @@ module.exports = {
     }
   },
   // 保存时，语法检查
-  lintOnSave: process.env.NODE_ENV !== 'production',
+  lintOnSave: NODE_ENV !== 'production',
   // 是否支持独立构建, 支持template
-  runtimeCompiler: true
+  runtimeCompiler: true,
+  pluginOptions: {
+    // https://github.com/webpack-contrib/webpack-bundle-analyzer
+    webpackBundleAnalyzer: {
+      // 开发环境不开启
+      analyzerMode: NODE_ENV === 'development' ? 'disalbed' : 'static',
+      openAnalyzer: false,
+      // https://webpack.js.org/configuration/stats/
+      statsOptions: {
+        excludeModules: (moduleSource) => {
+          if (moduleSource) {
+            // 分析时排除svg图标目录
+            return moduleSource.match(/assets\/svg\//)
+          }
+        }
+      }
+    }
+  }
 }
