@@ -183,3 +183,28 @@ Vue.config.errorHandler = function errorHandler(err, vm, cause) {
   }
 }
 ```
+
+## 说明文档
+代码注释规范使用[jsdoc](https://jsdoc.app/)
+
+运行```
+npm run doc
+```
+自动根据代码注释生成说明文档
+
+### vue组件注释
+```
+/**
+ * @module components/Counter
+ * @author 杜伟坡 <dovapour@qq.com>
+ * @desc 计数器组件
+ * @example <Counter :counter-initor="5" :step="2"></Counter>
+ * @vue-prop {Number} conterInitor - 计数器初始值
+ * @vue-prop {Number} [step=1] - 增加步长
+ * @vue-data {Number} counter - 计数器当前值
+ * @vue-computed {String} message
+ * @vue-event {Number} increment - 计数器增加后，触发事件
+ * @vue-event {Number} decrement - 计数器减小后，触发事件
+ */
+
+```

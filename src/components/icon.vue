@@ -13,6 +13,17 @@ const requireAll = (requireContext) => {
 const req = require.context('@/assets/svg', true, /\.svg$/)
 requireAll(req)
 
+/**
+ * @module components/Icon
+ * @author 杜伟坡 <dovapour@qq.com>
+ * @desc 自定义图标
+ * @example <Icon type="js" :size="14"></Icon>
+ * @vue-prop {String} type 名称
+ * @vue-prop {String} [color] 颜色
+ * @vue-prop {Number} [size=14] 尺寸
+ * @vue-prop {String} [className] css类
+ */
+
 export default {
   name: 'Icon',
   props: {

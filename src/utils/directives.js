@@ -1,4 +1,8 @@
-// 全局指令
+/**
+ * 全局指令
+ * @module utils/directives
+ *
+ */
 module.exports = {
   color: {
     bind(el, binding) {
