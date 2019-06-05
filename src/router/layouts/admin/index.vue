@@ -4,7 +4,10 @@
     <el-container>
       <el-header>Header</el-header>
       <el-main>
-        <router-view />
+        <keep-alive>
+          <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" />
       </el-main>
       <el-footer>Footer</el-footer>
     </el-container>
