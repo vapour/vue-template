@@ -251,6 +251,10 @@ npm run doc
 * @/lang目录
 * @/router/layout/admin/components/switch-language.vue
 
+### 增加新语言包
+1. lang目录增加目标语言包
+2. lang/index.js 中引入语言包，并引入element-ui对应语言包
+3. switch-language.vue中手动加入目标语言
 
 
 ## 打包分析
