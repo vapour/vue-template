@@ -243,6 +243,16 @@ npm run doc
 
 ```
 
+## i18n国际化
+集成[vue-i18n](https://github.com/kazupon/vue-i18n)方案，当前语言**language**存储在cookie中。
+
+相关代码实现:
+
+* @/lang目录
+* @/router/layout/admin/components/switch-language.vue
+
+
+
 ## 打包分析
 运行`npm run build`后会生成一个**dist/report.html**文件，可查看打包模块详细
 ![chunk-vendors.js](https://ws1.sinaimg.cn/large/006tNc79gy1g39vqloed9j31160l0grl.jpg)
