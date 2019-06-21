@@ -243,6 +243,10 @@ npm run doc
 
 ```
 
+## i18n
+多语言支持，可查看[branch:i18n](https://github.com/vapour/vue-template/tree/i18n)
+
+
 ## 打包分析
 运行`npm run build`后会生成一个**dist/report.html**文件，可查看打包模块详细
 ![chunk-vendors.js](https://ws1.sinaimg.cn/large/006tNc79gy1g39vqloed9j31160l0grl.jpg)
