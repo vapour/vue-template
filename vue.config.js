@@ -36,8 +36,14 @@ module.exports = {
     // remove the prefetch plugin
     config.plugins.delete('prefetch')
 
-    // 删除默认svg处理规则
-    config.module.rules.delete('svg')
+    // 默认svg处理规则中排除svg图标
+    // 这样可兼容iconfont图标和svg-sprite图标
+    config.module
+      .rule('svg')
+      .exclude
+      .add(resolve('src/assets/svg'))
+      .end()
+
     config.module
       .rule('svg-sprite-loader')
       .test(/\.svg$/)
