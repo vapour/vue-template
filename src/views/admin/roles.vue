@@ -1,5 +1,8 @@
 <template>
-  <div>角色管理</div>
+  <div class="mpage">
+    <h3>角色管理</h3>
+    <p>测试sass</p>
+  </div>
 </template>
 
 <script>
@@ -15,3 +18,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.mpage{
+  h3{
+    color:blue;
+  }
+  p{
+    color:#999;
+  }
+}
+</style>
