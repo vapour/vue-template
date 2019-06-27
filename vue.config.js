@@ -43,7 +43,7 @@ module.exports = {
       .exclude
       .add(resolve('src/assets/svg'))
       .end()
-    
+
     config.module
       .rule('svg-sprite-loader')
       .test(/\.svg$/)

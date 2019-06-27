@@ -243,8 +243,18 @@ npm run doc
 
 ```
 
-## i18n
-多语言支持，可查看[branch:i18n](https://github.com/vapour/vue-template/tree/i18n)
+## i18n国际化
+集成[vue-i18n](https://github.com/kazupon/vue-i18n)方案，当前语言**language**存储在cookie中。
+
+相关代码实现:
+
+* @/lang目录
+* @/router/layout/admin/components/switch-language.vue
+
+### 增加新语言包
+1. lang目录增加目标语言包
+2. lang/index.js 中引入语言包，并引入element-ui对应语言包
+3. switch-language.vue中手动加入目标语言
 
 
 ## 打包分析

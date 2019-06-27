@@ -2,7 +2,9 @@
   <el-container>
     <el-aside width="200px">Aside</el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <switch-language></switch-language>
+      </el-header>
       <el-main>
         <keep-alive>
           <router-view v-if="$route.meta.keepAlive" />
@@ -15,8 +17,11 @@
 </template>
 
 <script>
+import SwitchLanguage from './components/switch-language.vue'
+
 export default {
   name: 'admin-layout',
+  components: { SwitchLanguage },
   data() {
     return {
       name: 'vapour'
@@ -24,3 +29,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.el-main{
+  line-height:auto;
+}
+</style>

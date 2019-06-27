@@ -1,7 +1,14 @@
 <template>
-  <div class="mpage">
-    <h3>角色管理</h3>
-    <p>测试sass</p>
+  <div>
+    <el-date-picker
+      v-model="value1"
+      type="date"
+      :placeholder="$t('test.calender')">
+    </el-date-picker>
+    <i class="el-icon-edit"></i>
+    <i class="el-icon-share"></i>
+    <i class="el-icon-delete"></i>
+    <el-button type="primary" icon="el-icon-search">搜索</el-button>
   </div>
 </template>
 
@@ -10,11 +17,8 @@ export default {
   name: 'admin-layout',
   data() {
     return {
-      name: 'vapour'
+      value1: null
     }
-  },
-  mounted() {
-    console.log(this.helper.toJson({ name: 'vapour', desc: 'pddd' }))
   }
 }
 </script>
