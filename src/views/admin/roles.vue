@@ -22,3 +22,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.mpage{
+  h3{
+    color:blue;
+  }
+  p{
+    color:#999;
+  }
+}
+</style>

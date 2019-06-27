@@ -33,6 +33,8 @@
     "jsdoc": "^3.6.2",
     "jsdoc-vuejs": "^2.4.3",
     "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "svg-sprite-loader": "^4.1.6",
     "vue-cli-plugin-axios": "0.0.4",
     "vue-cli-plugin-element": "^1.0.1",
