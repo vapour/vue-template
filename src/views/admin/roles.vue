@@ -1,5 +1,5 @@
 <template>
-  <div>角色管理</div>
+  <div>角色管理22444</div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
   name: 'admin-layout',
   data() {
     return {
-      name: 'vapour'
+      name: 'vapour2'
     }
   },
   mounted() {

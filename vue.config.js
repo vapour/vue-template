@@ -94,7 +94,7 @@ module.exports = {
   // 保存时，语法检查
   lintOnSave: NODE_ENV !== 'production',
   // 是否支持独立构建, 支持template
-  runtimeCompiler: true,
+  runtimeCompiler: false,
   pluginOptions: {
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
     webpackBundleAnalyzer: {
