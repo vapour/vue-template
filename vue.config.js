@@ -70,6 +70,9 @@ module.exports = {
     contentBase: './',
     // 不检查Host是否正确
     disableHostCheck: true,
+    // 文件改变后，默认不刷新页面
+    liveReload: false,
+    // 启用hmr
     hot: true,
     setup: (app, server) => {
       // 前端模拟接口
@@ -94,7 +97,7 @@ module.exports = {
   // 保存时，语法检查
   lintOnSave: NODE_ENV !== 'production',
   // 是否支持独立构建, 支持template
-  runtimeCompiler: true,
+  runtimeCompiler: false,
   pluginOptions: {
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
     webpackBundleAnalyzer: {
