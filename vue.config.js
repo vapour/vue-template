@@ -70,6 +70,9 @@ module.exports = {
     contentBase: './',
     // 不检查Host是否正确
     disableHostCheck: true,
+    // 文件改变后，默认不刷新页面
+    liveReload: false,
+    // 启用hmr
     hot: true,
     setup: (app, server) => {
       // 前端模拟接口

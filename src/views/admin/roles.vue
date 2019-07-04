@@ -10,7 +10,7 @@ export default {
   name: 'admin-layout',
   data() {
     return {
-      name: 'vapour2'
+      name: 'vapour'
     }
   },
   mounted() {
@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
 .mpage{
   h3{
-    color:blue;
+    color:red;
   }
   p{
     color:grey;
