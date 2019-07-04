@@ -1,5 +1,8 @@
 <template>
-  <div>角色管理22444</div>
+  <div class="mpage">
+    <h3>角色管理</h3>
+    <p>使用角色管理人员权限</p>
+  </div>
 </template>
 
 <script>
@@ -22,7 +25,7 @@ export default {
     color:blue;
   }
   p{
-    color:#999;
+    color:grey;
   }
 }
 </style>
