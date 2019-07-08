@@ -3,7 +3,9 @@
  * @desc 全局公共方法
  *
  */
-module.exports = {
+import modal from './modal.js'
+
+export default {
   /**
    * 将对象转换为字符串
    * @param {object} json 对象
@@ -12,5 +14,6 @@ module.exports = {
    */
   toJson(json) {
     return JSON.stringify(json)
-  }
+  },
+  modal
 }

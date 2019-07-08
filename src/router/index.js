@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home.vue'
 import DefaultLayout from './layouts/default/index.vue'
 import AdminLayout from './layouts/admin/index.vue'
+import DemoLayout from './layouts/demo/index.vue'
 
 Vue.use(Router)
 
@@ -33,6 +34,17 @@ export default new Router({
         path: 'roles',
         name: 'roles',
         component: () => import(/* webpackChunkName: "roles" */ '@/views/admin/roles.vue')
+      }]
+    },
+    {
+      path: '/demo',
+      name: 'demo',
+      redirect: '/demo/dialog',
+      component: DemoLayout,
+      children: [{
+        path: 'dialog',
+        name: 'dialog',
+        component: () => import(/* webpackChunkName: "dialog" */ '@/views/demo/dialog.vue')
       }]
     }
   ]
