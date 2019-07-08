@@ -23,12 +23,12 @@ const mixin = {
     }
   },
   methods: {
-    resolve() {
-      this.midResolve()
+    resolve(result) {
+      this.midResolve(result)
       this.destroy()
     },
-    reject() {
-      this.midReject()
+    reject(err) {
+      this.midReject(err)
       this.destroy()
     },
     destroy() {
@@ -58,7 +58,6 @@ export default {
     if (keepAlive) {
       let cacheInstance = map[mod.name]
       if (cacheInstance) {
-        console.log('from cacheInstance')
         return new Promise((resolve, reject) => {
           cacheInstance.visible = true
           cacheInstance.midResolve = resolve
