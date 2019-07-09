@@ -1,6 +1,6 @@
 /**
  * @module utils/helper/modal
- * @desc 全局公共方法
+ * @desc dialog工具方法
  *
  */
 import Vue from 'vue'
