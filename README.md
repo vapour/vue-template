@@ -257,6 +257,86 @@ npm run doc
 3. switch-language.vue中手动加入目标语言
 
 
+## el-dialog
+### 普通方法
+```
+<template>
+  <div>
+    <dialog1></dialog1>
+    <dialog2></dialog2>
+    <dialog3></dialog3>
+  </div>
+</template>
+```
+页面中引入并初始化了所有需要的dialog，这些dialog都会运行。引起不必要的性能消耗
+### 推荐方法
+```
+import Dialog1 from './dialog/demo1.vue'
+import Dialog2 from './dialog/demo2.vue'
+
+export default {
+  methods: {
+    showDialog1() {
+      this.helper.modal.open(DialogDemo1).then((result) => {
+        console.log('result ok', result)
+      }, (err) => {
+        console.log('cancel', err)
+      })
+    },
+    showDialog1WithData() {
+    	// 打开时，自定义data数据、props
+      this.helper.modal.open(DialogDemo1, {
+        // prop数据
+        propsData: {
+          title: '请确认'
+        }
+        data: {
+          form: {
+            name: '前端分享'
+          }
+        }
+      })
+    }
+  }
+}
+```
+通过helper.modal.open实现了按需加载，关闭时会主动销毁dialog。
+
+### 使用说明
+使用`helper.modal.open`打开dialog时，混入(mixin)了以下特性:
+
+* **visible**属性，控制显示隐藏
+* **resolve**和**reject**方法，支持promise
+* **destroy**方法，关闭dialog时，自动销毁组件。不需要用户调用
+* **keepAlive**属性，支持关闭dialog时，不销毁组件。当缓存dialog时，页面离开前需要主动调用`this.helper.modal.destroy(modName)`来销毁组件
+* **forceUpdate**属性，刷新缓存组件的数据状态。适用于data/props修改后，需要缓存组件即时响应
+
+```
+// 最基本的el-dialog示例
+<template>
+  <el-dialog 
+    title="普通dialog"
+    <!-- 内置visible -->
+    :visible.sync="visible"
+    <!-- 内置reject -->
+    @closed="reject">
+    <h3>我是普通dialog</h3>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="reject">取 消</el-button>
+      <el-button type="primary" @click="resolve">确 定</el-button>
+    </span>
+  </el-dialog>
+</template>
+
+<script>
+export default {
+  // 名称必须有，且全局唯一
+  name: 'dialog-demo1'
+}
+</script>
+```
+详细使用方法，可查看`src/views/demo/dialog.vue`
+
 ## 打包分析
 运行`npm run build`后会生成一个**dist/report.html**文件，可查看打包模块详细
 ![chunk-vendors.js](https://ws1.sinaimg.cn/large/006tNc79gy1g39vqloed9j31160l0grl.jpg)

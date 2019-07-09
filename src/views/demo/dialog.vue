@@ -1,10 +1,11 @@
 <template>
   <div class="about">
     <h1>el-dialog使用方法</h1>
-    <el-button @click="showDialog1">普通</el-button>
+    <el-button @click="showDialog1">不缓存，关闭销毁</el-button>
     <el-button @click="showDialog1WithData">传递数据</el-button>
     <hr />
-    <el-button @click="showDialog2">可缓存</el-button>
+    <el-button @click="showDialog2">可缓存keepAlive</el-button>
+    <el-button @click="showDialog2ForceUpdate">可缓存forceUpdate</el-button>
     <el-button @click="removeDialog2">删除缓存</el-button>
   </div>
 </template>
@@ -55,6 +56,18 @@ export default {
           message: '关闭'
         })
         console.log('cancel', err)
+      })
+    },
+    showDialog2ForceUpdate() {
+      this.helper.modal.open(DialogDemo2, {
+        data: {
+          form: {
+            name: '前端分享: ' + Date.now()
+          }
+        }
+      }, {
+        keepAlive: true,
+        forceUpdate: true
       })
     },
     removeDialog2() {

@@ -4,9 +4,11 @@
     <div>指令测试{{text | hello}}</div>
     svg图标<Icon type="js"></Icon>
     <hr />
-    <router-link to="/erp">erp系统</router-link>
-
-    <router-link to="/admin">admin系统</router-link>
+    <ul>
+      <li><router-link to="/demo">测试用例</router-link></li>
+      <li><router-link to="/erp">erp系统</router-link></li>
+      <li><router-link to="/admin">admin系统</router-link></li>
+    </ul>
   </div>
 </template>
 
