@@ -47,7 +47,7 @@ const mixin = {
 export default {
   /**
    * 打开el-dialog
-   * @param {Object} vue组件对象
+   * @param {Object} mod vue组件对象
    * @param {Object} [options.propsData] props对象
    * @param {Object} [options.data] data对象
    * @param {Object} [options.parent] 继承关系, 需要在el-dialog内使用$store时设置 parent:this
