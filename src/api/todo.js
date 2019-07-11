@@ -11,23 +11,23 @@ const url = '/todo'
 export default {
   /**
    * 分页获取
-   * @param {object} param  请求参数
-   * @param {number} [param.page] 当前页数
-   * @param {number} param.pageSize 分页大小
+   * @param {object} params  请求参数
+   * @param {number} [params.page] 当前页数
+   * @param {number} params.pageSize 分页大小
    * @return {Promise}
    */
-  list(param) {
-    return axios.get(url, { param })
+  list(params) {
+    return axios.get(url, { params })
   },
   /**
    * 新建数据
-   * @param {object} param  请求参数
-   * @param {string} param.name 事项名称
-   * @param {string} param.content 详细描述
+   * @param {object} params  请求参数
+   * @param {string} params.name 事项名称
+   * @param {string} params.content 详细描述
    * @return {Promise}
    */
-  create(param) {
-    return axios.post(url, param)
+  create(params) {
+    return axios.post(url, params)
   },
   /**
    * 获取详情
@@ -40,13 +40,13 @@ export default {
   /**
    * 更新单个数据
    * @param {string} id  数据id
-   * @param {object} param  更新数据对象
-   * @param {string} param.name 事项名称
-   * @param {string} param.content 详细描述
+   * @param {object} params  更新数据对象
+   * @param {string} params.name 事项名称
+   * @param {string} params.content 详细描述
    * @return {Promise}
    */
-  update(id, param) {
-    return axios.put(url + '/' + id, param)
+  update(id, params) {
+    return axios.put(url + '/' + id, params)
   },
   /**
    * 删除单个数据
