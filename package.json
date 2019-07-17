@@ -8,6 +8,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "inspect": "vue inspect > config/inspect.js",
+    "tls": "node ./scripts/tls/install-ca.js",
     "doc": "jsdoc -c ./config/jsdoc.json"
   },
   "dependencies": {
