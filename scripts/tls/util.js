@@ -168,7 +168,7 @@ exports.updateWebpackCert = function () {
 
   function getWebpackDevServerPath() {
     const cache = require.cache
-    const name = Object.keys(cache).find(key => key.includes('webpack-dev-server/package.json'))
+    const name = Object.keys(cache).find(key => key.includes('webpack-dev-server' + path.sep + 'package.json'))
     return path.dirname(cache[name].filename)
   }
 }
