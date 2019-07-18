@@ -1,6 +1,6 @@
 /**
  * @module utils/helper/modal
- * @desc 全局公共方法
+ * @desc dialog工具方法
  *
  */
 import Vue from 'vue'
@@ -47,7 +47,7 @@ const mixin = {
 export default {
   /**
    * 打开el-dialog
-   * @param {Object} vue组件对象
+   * @param {Object} mod vue组件对象
    * @param {Object} [options.propsData] props对象
    * @param {Object} [options.data] data对象
    * @param {Object} [options.parent] 继承关系, 需要在el-dialog内使用$store时设置 parent:this
@@ -88,7 +88,7 @@ export default {
 
     // $mount()如果没有提供 elementOrSelector 参数，模板将被渲染为文档之外的的元素
     // 并且你必须使用原生 DOM API 把它插入文档中
-    // 这个方法返回实例自身，因而可以链式调用其它实例方法。
+    // 这个方法返回实例自身，因而可以链式调用其它实例方法
     instance.vm = instance.$mount()
     document.body.appendChild(instance.vm.$el)
 
