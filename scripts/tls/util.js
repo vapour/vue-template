@@ -99,7 +99,7 @@ let createFakeCertificateByDomain = exports.createFakeCertificateByDomain = func
   cert.validity.notBefore = new Date()
   cert.validity.notBefore.setFullYear(cert.validity.notBefore.getFullYear() - 1)
   cert.validity.notAfter = new Date()
-  cert.validity.notAfter.setFullYear(cert.validity.notAfter.getFullYear() + 1)
+  cert.validity.notAfter.setFullYear(cert.validity.notAfter.getFullYear() + 3)
   const attrs = [{
     name: 'commonName',
     value: domain
