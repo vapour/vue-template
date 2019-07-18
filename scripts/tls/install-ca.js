@@ -30,7 +30,7 @@ util.initCA().then(async () => {
   }
   if (child) {
     child.stdout.on('data', data => {
-      console.log('out', data.toString('utf-8'))
+      console.log(data.toString('utf-8'))
     })
   }
 })
