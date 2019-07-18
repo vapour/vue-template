@@ -80,8 +80,8 @@ exports.initCA = async function () {
   } catch (e) {
   }
   console.log('CA证书开始获取')
-  await getRemoteFile('https://raw.githubusercontent.com/vapour/vue-template/ssl/scripts/tls/cert/f2e.ca.crt', caCertPath)
-  await getRemoteFile('https://raw.githubusercontent.com/vapour/vue-template/ssl/scripts/tls/cert/f2e.ca.key.pem', caKeyPath)
+  await getRemoteFile('https://raw.githubusercontent.com/vapour/vue-template/master/scripts/tls/cert/f2e.ca.crt', caCertPath)
+  await getRemoteFile('https://raw.githubusercontent.com/vapour/vue-template/master/scripts/tls/cert/f2e.ca.key.pem', caKeyPath)
   console.log('CA证书获取完成')
 }
 
