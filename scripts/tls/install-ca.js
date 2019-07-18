@@ -51,6 +51,7 @@ function checkSystemCert(platform) {
   } else {
     return new Promise((resolve, reject) => {
       // 返回了所有证书
+      // https://docs.microsoft.com/zh-cn/dotnet/framework/tools/certmgr-exe-certificate-manager-tool
       let child = spawn('certmgr.exe', ['-c', '-s', 'root'], {cwd:path.join(__dirname, 'cert')})
       let txt = ''
       child.stdout.on('data', data => {

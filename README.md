@@ -327,6 +327,20 @@ export default {
 ```
 详细使用方法，可查看`src/views/demo/dialog.vue`
 
+## https
+开启步骤：
+
+1. `vue.config.js`中 `devServer.https`选项设置成`true`
+2. 运行`npm run https`安装证书
+
+window上运行时，会有以下确认窗口。选择【是】，安装完成
+![](http://ww2.sinaimg.cn/large/006tNc79gy1g541y80l12j30dq0bb3ze.jpg)
+
+> 修改devServer.host后，需要重新运行`npm run https`
+
+###效果
+![](http://ww1.sinaimg.cn/large/006tNc79gy1g5421n8h93j30ez0a03z4.jpg)
+
 ## 打包分析
 运行`npm run build`后会生成一个**dist/report.html**文件，可查看打包模块详细
 ![chunk-vendors.js](https://ws1.sinaimg.cn/large/006tNc79gy1g39vqloed9j31160l0grl.jpg)
