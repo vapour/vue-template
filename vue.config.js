@@ -66,6 +66,7 @@ module.exports = {
   // 打包时不生成.map文件
   productionSourceMap: NODE_ENV !== 'development',
   devServer: {
+    // 可设置成其它host, 注意绑定到127.0.0.1
     host: 'dev.joinf.com',
     // serve static
     contentBase: './',
@@ -75,8 +76,10 @@ module.exports = {
     liveReload: false,
     // 启用hmr
     hot: true,
-    // 开启https访问
-    https: true,
+    // 默认不开启https，
+    // 如果要开启，设置成true, 然后运行 npm run https
+    // 如果host有修改，修改后运行 npm run https
+    https: false,
     setup: (app, server) => {
       // 前端模拟接口
       apis.forEach(item => {
