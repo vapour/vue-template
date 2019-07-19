@@ -8,6 +8,13 @@
 ## 目录
 ![Vue目录规范](https://ws3.sinaimg.cn/large/006tNc79gy1g38ru1imgkj30hb0nrq4a.jpg)
 
+## npm命令
+1. `npm run serve/dev` 启动开发环境
+2. `npm run build` 生产环境打包
+3. `npm run doc` 根据注释生成帮助文档，参考**注释规范**
+4. `npm run https` 配置https环境，参考**https**
+5. `npm run inspect` 导出当前项目webpack配置
+
 ## 图标
 
 图标使用[svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)技术，将svg格式图标放入**assets/svg**目录。
