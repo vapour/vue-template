@@ -9,12 +9,9 @@ require('webpack-dev-server/package.json')
 
 const caCertPath = path.join(__dirname, './cert/f2e.ca.crt')
 const caKeyPath = path.join(__dirname, './cert/f2e.ca.key.pem')
-
-
 const pki = forge.pki
 
 exports.createCA = function() {
-  
   console.log('CA证书开始创建')
   const keys = pki.rsa.generateKeyPair(2046)
   const cert = pki.createCertificate()
