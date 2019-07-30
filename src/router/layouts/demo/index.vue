@@ -8,7 +8,10 @@
       text-color="#fff"
       active-text-color="#ffd04b" style="height:100%;">
         <el-menu-item index="1">
-          <router-link slot="title" :to="{name: 'dialog'}">el-dialog使用</router-link>
+          <router-link slot="title" :to="{name: 'dialog'}">el-dialog</router-link>
+        </el-menu-item>
+        <el-menu-item index="2">
+          <router-link slot="title" :to="{name: 'upload'}">el-uploader按序上传</router-link>
         </el-menu-item>
       </el-menu>
     </el-aside>
