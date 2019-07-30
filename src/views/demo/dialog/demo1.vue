@@ -6,6 +6,7 @@
     @closed="reject">
     <h3>我是普通dialog</h3>
     <p>关闭后，当前组件会销毁</p>
+    <p>{{$t('dialog.title')}}</p>
     <el-form :model="form" label-width="100px">
       <el-form-item label="活动名称">
         <el-input v-model="form.name" autocomplete="off"></el-input>
@@ -28,6 +29,7 @@
 export default {
   name: 'dialog-demo1',
   data() {
+    console.log(this, this.helper)
     return {
       form: {
         name: null,

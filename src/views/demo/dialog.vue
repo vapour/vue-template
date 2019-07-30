@@ -17,7 +17,7 @@ import DialogDemo2 from './dialog/demo2.vue'
 export default {
   methods: {
     showDialog1() {
-      this.helper.modal.open(DialogDemo1).then((result) => {
+      this.helper.modal.open(DialogDemo1, { parent: this }).then((result) => {
         this.$message({
           message: '确定',
           type: 'success'
@@ -32,6 +32,7 @@ export default {
     },
     showDialog1WithData() {
       this.helper.modal.open(DialogDemo1, {
+        parent: this,
         /*
         // prop数据
         propsData: {

@@ -4,7 +4,7 @@
     :visible.sync="visible"
     @closed="reject">
     <h3>设置了keepAlive:true</h3>
-    <p>关闭后，不销毁，需要手动销毁</p>
+    <p>关闭后，不销毁，需要手动销毁{{$t('dialog.content')}}</p>
     <el-form :model="form" label-width="100px">
       <el-form-item label="活动名称">
         <el-input v-model="form.name" autocomplete="off"></el-input>
@@ -27,6 +27,7 @@
 export default {
   name: 'dialog-demo2',
   data() {
+    console.log(this, this.helper)
     return {
       form: {
         name: null,

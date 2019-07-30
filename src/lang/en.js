@@ -4,5 +4,9 @@ export default {
   },
   test: {
     calender: 'Select Date'
+  },
+  dialog: {
+    title: 'country、city',
+    content: 'memo content of english'
   }
 }
