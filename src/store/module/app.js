@@ -18,7 +18,12 @@ export default {
     },
     setLanguage(state, language) {
       state.language = language
-      Cookies.set('language', language)
+      Cookies.set('language', language, {
+        // 设置在主域, 多应用共享
+        domain: '.joinf.com',
+        // 过期时间1年
+        expires: 365
+      })
     }
   },
   actions: {
