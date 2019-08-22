@@ -8,6 +8,13 @@
 ## 目录
 ![Vue目录规范](https://ws3.sinaimg.cn/large/006tNc79gy1g38ru1imgkj30hb0nrq4a.jpg)
 
+## npm命令
+1. `npm run serve/dev` 启动开发环境
+2. `npm run build` 生产环境打包
+3. `npm run doc` 根据注释生成帮助文档，参考**注释规范**
+4. `npm run https` 配置https环境，参考**https**
+5. `npm run inspect` 导出当前项目webpack配置
+
 ## 图标
 
 图标使用[svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)技术，将svg格式图标放入**assets/svg**目录。
@@ -336,6 +343,51 @@ export default {
 </script>
 ```
 详细使用方法，可查看`src/views/demo/dialog.vue`
+
+## 开发阶段代码
+通过`webpack-strip-code`实现测试代码只在开发阶段运行，打包上线时会自动删除
+
+### 规则
+符合以下规范的代码，打包时会自动删除
+
+```
+/* dev-block-start */
+// 只在development环境运行，其它环境自动删除
+alert('这里的代码只在开发阶段运行')
+/* dev-block-end */
+```
+
+### vscode代码片断
+
+```
+"development code": {
+ 	"scope": "javascript,typescript,vue",
+ 	"prefix": "devcode",
+ 	"body": [
+		"/* dev-block-start */",
+		"// 只在development环境运行，其它环境自动删除",
+ 		"$1",
+ 		"/* dev-block-end */"
+ 	],
+ 	"description": "只在开发阶段运行代码"
+}
+```
+
+
+## https
+开启步骤：
+
+1. `vue.config.js`中 `devServer.https`选项设置成`true`
+2. 运行`npm run https`安装证书
+
+window上运行时，会有以下确认窗口。选择【是】，安装完成
+![](http://ww2.sinaimg.cn/large/006tNc79gy1g541y80l12j30dq0bb3ze.jpg)
+
+> 修改devServer.host后，需要重新运行`npm run https`
+
+### 效果
+
+![](http://ww1.sinaimg.cn/large/006tNc79gy1g5421n8h93j30ez0a03z4.jpg)
 
 ## 打包分析
 运行`npm run build`后会生成一个**dist/report.html**文件，可查看打包模块详细

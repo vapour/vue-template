@@ -45,6 +45,14 @@ export default new Router({
         path: 'dialog',
         name: 'dialog',
         component: () => import(/* webpackChunkName: "dialog" */ '@/views/demo/dialog.vue')
+      }, {
+        path: 'upload',
+        name: 'upload',
+        component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/upload.vue')
+      }, {
+        path: 'strip',
+        name: 'strip',
+        component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/strip-code.vue')
       }]
     }
   ]

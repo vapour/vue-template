@@ -12,7 +12,7 @@ util.initCA().then(async () => {
   // 将网站证书更新到webpack-dev-server配置中
   util.updateWebpackCert()
 
-  const exist = await checkSystemCert(platform)
+  const exist = await checkSystemCert()
   if (exist) {
     console.log('成功')
     return
@@ -36,7 +36,7 @@ util.initCA().then(async () => {
 })
 
 // 检测CA证书是否需要导入到系统
-function checkSystemCert(platform) {
+function checkSystemCert() {
   if (platform === 'darwin') {
     return new Promise((resolve, reject) => {
       // 返回指定名称证书
@@ -51,6 +51,7 @@ function checkSystemCert(platform) {
   } else {
     return new Promise((resolve, reject) => {
       // 返回了所有证书
+      // https://docs.microsoft.com/zh-cn/dotnet/framework/tools/certmgr-exe-certificate-manager-tool
       let child = spawn('certmgr.exe', ['-c', '-s', 'root'], {cwd:path.join(__dirname, 'cert')})
       let txt = ''
       child.stdout.on('data', data => {

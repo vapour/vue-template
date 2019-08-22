@@ -16,9 +16,11 @@ export default {
   },
   mounted() {
     // 分页获取
-    apiTodo.list({ page: 1 }).then(({ data: res }) => {
+    apiTodo.list({ page: 1, q: '' }).then(({ data: res }) => {
       console.log(res.data.list)
     })
+
+    this.$axios.post('/url', { q: '' })
 
     // 获取单个
     apiTodo.show('444444').then(({ data: res }) => {
