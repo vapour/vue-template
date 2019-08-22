@@ -44,6 +44,22 @@ module.exports = {
       .add(resolve('src/assets/svg'))
       .end()
 
+    if (NODE_ENV !== 'development') {
+      config.module
+        .rule('webpack-strip-block')
+        .test(/\.js$/)
+        .pre()
+        .include
+          .add(resolve('src'))
+        .end()
+        .use('webpack-strip-block')
+        .loader('webpack-strip-block')
+        .options({
+          start: 'dev-block-start',
+          end: 'dev-block-end'
+        })
+    }
+
     config.module
       .rule('svg-sprite-loader')
       .test(/\.svg$/)

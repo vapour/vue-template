@@ -49,6 +49,10 @@ export default new Router({
         path: 'upload',
         name: 'upload',
         component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/upload.vue')
+      }, {
+        path: 'strip',
+        name: 'strip',
+        component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/strip-code.vue')
       }]
     }
   ]

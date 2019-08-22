@@ -334,6 +334,36 @@ export default {
 ```
 详细使用方法，可查看`src/views/demo/dialog.vue`
 
+## 开发阶段代码
+通过`webpack-strip-code`实现测试代码只在开发阶段运行，打包上线时会自动删除
+
+### 规则
+符合以下规范的代码，打包时会自动删除
+
+```
+/* dev-block-start */
+// 只在development环境运行，其它环境自动删除
+alert('这里的代码只在开发阶段运行')
+/* dev-block-end */
+```
+
+### vscode代码片断
+
+```
+"development code": {
+ 	"scope": "javascript,typescript,vue",
+ 	"prefix": "devcode",
+ 	"body": [
+		"/* dev-block-start */",
+		"// 只在development环境运行，其它环境自动删除",
+ 		"$1",
+ 		"/* dev-block-end */"
+ 	],
+ 	"description": "只在开发阶段运行代码"
+}
+```
+
+
 ## https
 开启步骤：
 
