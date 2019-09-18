@@ -29,6 +29,12 @@ export default {
     upload() {
       let uploader = this.$refs.uploader
       // 每次只上传一个，循环上传
+      let uploading = uploader.uploadFiles.find(item => item.status === 'uploading')
+      if (uploading) {
+        // 还在上传中的文件时，返回
+        // 避免并发上传
+        return
+      }
       let file = uploader.uploadFiles.find(item => item.status === 'pending')
       if (file) {
         file.status = 'ready'
