@@ -8,5 +8,10 @@ export default {
   dialog: {
     title: '国家、城市',
     content: '中文内容测试'
+  },
+  tab: {
+    basic: '基本信息',
+    address: '地址',
+    other: '其它'
   }
 }
