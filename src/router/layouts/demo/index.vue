@@ -16,6 +16,9 @@
         <el-menu-item index="3">
           <router-link slot="title" :to="{name: 'strip'}">开发阶段测试代码</router-link>
         </el-menu-item>
+        <el-menu-item index="3">
+          <router-link slot="title" :to="{name: 'skin'}">换肤功能</router-link>
+        </el-menu-item>
       </el-menu>
     </el-aside>
     <el-container>

@@ -52,7 +52,11 @@ export default new Router({
       }, {
         path: 'strip',
         name: 'strip',
-        component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/strip-code.vue')
+        component: () => import(/* webpackChunkName: "stripcode" */ '@/views/demo/strip-code.vue')
+      }, {
+        path: 'skin',
+        name: 'skin',
+        component: () => import(/* webpackChunkName: "skin" */ '@/views/demo/skin.vue')
       }]
     }
   ]

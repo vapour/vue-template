@@ -1,5 +1,7 @@
 const path = require('path')
 const apis = require('./config/apis.js')
+const ThemeColorReplacer = require('webpack-theme-color-replacer')
+const forElementUI = require('webpack-theme-color-replacer/forElementUI')
 
 const ENV = process.env
 let NODE_ENV = ENV.NODE_ENV
@@ -35,6 +37,22 @@ module.exports = {
   chainWebpack: config => {
     // remove the prefetch plugin
     config.plugins.delete('prefetch')
+
+    config.plugin('themeColorReplace')
+      .use(new ThemeColorReplacer({
+        // colors array for extracting css file
+        matchColors: [
+          ...forElementUI.getElementUISeries('#409EFF')
+        ],
+        externalCssFiles: ['./node_modules/element-ui/lib/theme-chalk/index.css'],
+        changeSelector: forElementUI.changeSelector,
+        fileName: 'css/theme-colors-[contenthash:8].css', //optional. output css file name, suport [contenthash] and [hash].
+        // optional, String or string array. Set external css files (such as cdn css) to extract colors.
+        // externalCssFiles: ['./node_modules/element-ui/lib/theme-chalk/index.css'],
+        // optional. Inject css text in js file, not need to download `theme-colors-xxx.css` any more.
+        injectCss: true,
+        isJsUgly: process.env.NODE_ENV !== 'development'
+      }))
 
     // 默认svg处理规则中排除svg图标
     // 这样可兼容iconfont图标和svg-sprite图标
