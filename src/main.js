@@ -8,7 +8,8 @@ import components from './components'
 import filters from './utils/filters'
 import directives from './utils/directives'
 import helper from './utils/helper.js'
-import badjs from './utils/badjs.js'
+// import badjs from './utils/badjs.js'
+import badjs from '@joinf-global/badjs'
 const NODE_ENV = process.env.NODE_ENV
 
 // 全局组件
