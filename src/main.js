@@ -39,8 +39,8 @@ badjs.init({
   // 不监听window.onerror错误
   windowOnError: false,
   // 是否开启离线日志
-  offlineLog: false,
-  offlineLogAuto: false
+  offlineLog: true,
+  offlineLogAuto: true
 })
 // 全局错误处理
 Vue.config.errorHandler = function errorHandler(err, vm, cause) {

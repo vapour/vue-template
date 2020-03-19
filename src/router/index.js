@@ -53,6 +53,10 @@ export default new Router({
         path: 'strip',
         name: 'strip',
         component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/strip-code.vue')
+      }, {
+        path: 'table',
+        name: 'table',
+        component: () => import(/* webpackChunkName: "uploader" */ '@/views/demo/table.vue')
       }]
     }
   ]

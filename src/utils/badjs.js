@@ -326,7 +326,7 @@ var _autoReportOffline = function() {
     script.src = _config.offline_auto_url || _config.url.replace(/badjs$/, "offlineAuto") + "?id=" + _config.id + "&uin=" + _config.uin;
     window._badjsOfflineAuto = function(isReport) {
         if (isReport) {
-            BJ_REPORT.reportOfflineLog();
+            report.reportOfflineLog();
         }
     };
     document.head.appendChild(script);
@@ -513,7 +513,7 @@ var report = {
                     form.target = iframe.name;
                     form.method = "POST";
                     form.action = _config.offline_url || _config.url.replace(/badjs$/, "offlineLog");
-                    form.enctype.method = 'multipart/form-data';
+                    // form.enctype.method = 'multipart/form-data';
 
                     var input = document.createElement("input");
                     input.style.display = "none";
@@ -599,3 +599,5 @@ typeof console !== "undefined" && console.error && setTimeout(function() {
 }, 0);
 
 export default report;
+
+global.report = report

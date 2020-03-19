@@ -12,7 +12,7 @@
     "doc": "jsdoc -c ./config/jsdoc.json"
   },
   "dependencies": {
-    "@joinf-global/badjs": "^1.0.0",
+    "@joinf-global/badjs": "^1.0.2",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "element-ui": "^2.9.1",
