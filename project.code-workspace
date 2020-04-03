@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		// 多个项目放在一个工作区，隐藏一些不想搜索的项目目录
+		"files.exclude": {
+			"**/dist": true
+		},
+		// 在保存时格式化文件。vue格式化有问题，所以不要开启
+		// "editor.formatOnSave": true,
+		// 一个制表符等于的空格数
+		"editor.tabSize": 2,
+		// 保存文件时在文件末尾插入一个最终新行
+		"files.insertFinalNewline": true,
+		// 将在保存文件时剪裁尾随空格
+		"files.trimTrailingWhitespace": true,
+		//  #让函数(名)和后面的括号之间加个空格
+		"javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+		//定义匿名函数的函数关键字后面的空格处理
+		"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+		// vue格式化，安装vue-format 0.1.9插件
+		"vue-format.break_attr_limit": 3,
+		"vue-format.html_indent_root": true,
+		"vue-format.js-beautify.space_after_anon_function": false,
+		// 支持jsx格式化
+		"vue-format.js-beautify.e4x": true,
+		// 在随后的行中断开链式方法调用
+		"vue-format.js-beautify.break_chained_methods": false,
+		// "vetur.format.options.tabSize": 2,
+		// "vetur.format.options.useTabs": true,
+		"vetur.format.defaultFormatterOptions": {
+			"prettier": {
+				"semi": false, //不加分号
+				"singleQuote": true, //用单引号
+				"jsxSingleQuote": true,
+				"jsxBracketSameLine": true
+			}
+		}
+	}
+}

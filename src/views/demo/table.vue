@@ -6,17 +6,11 @@
       row-key="id"
       @on-load-more="load"
       style="width: 100%">
-      <el-table-column
-        type="index"
-        width="50">
+      <el-table-column type="index" width="50">
       </el-table-column>
-      <el-table-column
-        prop="id"
-        label="id">
+      <el-table-column prop="id" label="id">
       </el-table-column>
-      <el-table-column
-        prop="title"
-        label="地址">
+      <el-table-column prop="title" label="地址">
       </el-table-column>
     </el-table>
   </div>

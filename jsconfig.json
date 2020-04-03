@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"] // 相对工作区文件的根目录
+    },
+    "target": "ES6",
+    "allowSyntheticDefaultImports": true // 允许从没有默认导出的模块进行默认导入。 这不会影响代码发出，只会影响类型检查。
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
