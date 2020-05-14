@@ -78,12 +78,13 @@ module.exports = {
       .set('@', resolve('src'))
       .set('api', resolve('src/api'))
       .set('components', resolve('src/components'))
+      .set('assets', resolve('src/assets'))
   },
   // 打包时不生成.map文件
   productionSourceMap: NODE_ENV !== 'development',
   devServer: {
     // 可设置成其它host, 注意绑定到127.0.0.1
-    host: 'dev.joinf.com',
+    host: '0.0.0.0',
     // serve static
     contentBase: './',
     // 不检查Host是否正确

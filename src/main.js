@@ -2,8 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './plugins/element'
 import './plugins/axios'
+import './plugins/vant'
 import components from './components'
 import filters from './utils/filters'
 import directives from './utils/directives'
@@ -11,6 +11,13 @@ import helper from './utils/helper.js'
 // import badjs from './utils/badjs.js'
 import badjs from '@joinf-global/badjs'
 const NODE_ENV = process.env.NODE_ENV
+import Bridge from './utils/bridge'
+
+
+// 初始化对象 防止ios覆盖原生变量
+window.JoinfNative = window.JoinfNative || {}
+
+Vue.prototype.$bridge = new Bridge('JoinfNative')
 
 // 全局组件
 Object.keys(components).forEach((key) => {

@@ -1,34 +1,43 @@
 <template>
-  <div class="home">
-    <div>测试显示<span v-color="'red'">指令</span></div>
-    <div>指令测试{{text | hello}}</div>
-    svg图标<Icon type="js"></Icon>
-    <hr />
-    <ul>
-      <li><router-link to="/demo">测试用例</router-link></li>
-      <li><router-link to="/erp">erp系统</router-link></li>
-      <li><router-link to="/admin">admin系统</router-link></li>
-    </ul>
+  <div>
+    <div>
+      <van-nav-bar
+        title="标题"
+        right-text="按钮"
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+      />
+      <main>
+        <keep-alive>
+          <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive" />
+      </main>
+      <van-tabbar v-model="active">
+        <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+        <van-tabbar-item icon="search">标签</van-tabbar-item>
+        <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+      </van-tabbar>
+    </div>
   </div>
 </template>
 
 <script>
-// 直接使用外部变量，例如通过<script>引入
-import * as jQuery2 from 'jQuery'
-
 export default {
-  name: 'home',
+  name: 'admin-layout',
   data() {
     return {
-      text: '开始测试'
+      name: 'vapour',
+      active: 0
     }
   },
-  mounted() {
-    console.log('test3', jQuery2)
-
-    this.$axios.get('/code/fresh').then(({ data: res }) => {
-      console.log(res)
-    })
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    onClickRight() {
+    }
   }
 }
 </script>

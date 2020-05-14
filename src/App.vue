@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-loading="loading">
+  <div id="app" >
     <router-view />
   </div>
 </template>
@@ -7,11 +7,6 @@
 <script>
 export default {
   name: 'app',
-  computed: {
-    loading() {
-      return this.$store.state.app.loading
-    }
-  }
 }
 </script>
 

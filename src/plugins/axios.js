@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import store from '../store'
-import { Message } from 'element-ui'
+import { Toast } from 'vant'
 
 let counter = 0
 
@@ -58,7 +58,13 @@ http.interceptors.response.use((response) => {
   let res = response.data
   if (config.autoHandleError !== false && res.success !== true) {
     const message = (res.code ? '[' + res.code + '] ' : '') + (res.msg || '未知错误')
-    Message({ type: 'error', message, duration: 8000 })
+    Toast({
+      type: 'fail',
+      message,
+      duration: '2000',
+      position: 'bottom'
+    })
+    // TODO  登录失效
     return Promise.reject(new Error(message))
   }
   return response
@@ -69,7 +75,12 @@ http.interceptors.response.use((response) => {
   }
   if (config.autoHandleError !== false) {
     const message = error.message || '未知错误'
-    Message({ type: 'error', message, duration: 8000 })
+    Toast({
+      type: 'fail',
+      message,
+      duration: '2000',
+      position: 'bottom'
+    })
   }
   return Promise.reject(error)
 })
